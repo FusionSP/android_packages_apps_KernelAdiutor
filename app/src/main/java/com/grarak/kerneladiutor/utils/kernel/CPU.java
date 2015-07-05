@@ -345,6 +345,11 @@ public class CPU implements Constants {
 
     public static void setMaxFreq(int freq, Context context) {
         setMaxFreq(Control.CommandType.CPU, freq, context);
+        if (Utils.existFile(CPU_ENABLE_OC_KT))
+            Control.runCommand(1, CPU_ENABLE_OC_KT, Control.CommandType.CPU, context); {
+            if (getMinFreq(0) > freq) setMinFreq(freq, context);
+            Control.runCommand(String.valueOf(freq), CPU_MAX_FREQ_KT, Control.CommandType.CPU, context);
+	}
     }
 
     public static void setMaxFreq(Control.CommandType command, int freq, Context context) {
@@ -364,6 +369,10 @@ public class CPU implements Constants {
             activateCore(core, true, null);
         String value = Utils.readFile(String.format(CPU_MAX_FREQ, core));
         if (value != null) return Utils.stringToInt(value);
+        } else if (Utils.existFile(String.format(CPU_MAX_FREQ_KT, core))) {
+            String value = Utils.readFile(String.format(CPU_MAX_FREQ_KT, core));
+            if (value != null) return Utils.stringToInt(value);
+        }
         return 0;
     }
 

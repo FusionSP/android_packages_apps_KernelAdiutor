@@ -43,8 +43,10 @@ public interface Constants {
     String CPU_TEMP_ZONE1 = "/sys/class/thermal/thermal_zone1/temp";
     String CPU_CORE_ONLINE = "/sys/devices/system/cpu/cpu%d/online";
     String CPU_MAX_FREQ = "/sys/devices/system/cpu/cpu%d/cpufreq/scaling_max_freq";
+    String CPU_MAX_FREQ_KT = "/sys/devices/system/cpu/cpu%d/cpufreq/scaling_max_freq_kt";
     String CPU_MIN_FREQ = "/sys/devices/system/cpu/cpu%d/cpufreq/scaling_min_freq";
     String CPU_MAX_SCREEN_OFF_FREQ = "/sys/devices/system/cpu/cpu%d/cpufreq/screen_off_max_freq";
+    String CPU_MAX_SCREEN_OFF_FREQ_KT = "/sys/devices/system/cpu/cpu%d/cpufreq/screen_off_scaling_mhz";
     String CPU_MSM_CPUFREQ_LIMIT = "/sys/kernel/msm_cpufreq_limit/cpufreq_limit";
     String CPU_AVAILABLE_FREQS = "/sys/devices/system/cpu/cpu%d/cpufreq/scaling_available_frequencies";
     String CPU_TIME_STATE = "/sys/devices/system/cpu/cpu%d/cpufreq/stats/time_in_state";
@@ -58,6 +60,7 @@ public interface Constants {
     String CPU_WQ_POWER_SAVING = "/sys/module/workqueue/parameters/power_efficient";
     String CPU_AVAILABLE_CFS_SCHEDULERS = "/sys/devices/system/cpu/sched_balance_policy/available_sched_balance_policy";
     String CPU_CURRENT_CFS_SCHEDULER = "/sys/devices/system/cpu/sched_balance_policy/current_sched_balance_policy";
+    String CPU_ENABLE_OC_KT = "/sys/devices/system/cpu/cpu%d/cpufreq/enable_oc";
 
     String CPU_QUIET = "/sys/devices/system/cpu/cpuquiet";
     String CPU_QUIET_ENABLE = CPU_QUIET + "/cpuquiet_driver/enabled";
