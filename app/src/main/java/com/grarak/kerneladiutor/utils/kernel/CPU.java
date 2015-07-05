@@ -346,7 +346,7 @@ public class CPU implements Constants {
     public static void setMaxFreq(int freq, Context context) {
         setMaxFreq(Control.CommandType.CPU, freq, context);
         if (Utils.existFile(CPU_ENABLE_OC_KT))
-            Control.runCommand(1, CPU_ENABLE_OC_KT, Control.CommandType.CPU, context); {
+            Control.runCommand(String.valueOf(1), CPU_ENABLE_OC_KT, Control.CommandType.CPU, context); {
             if (getMinFreq(0) > freq) setMinFreq(freq, context);
             Control.runCommand(String.valueOf(freq), CPU_MAX_FREQ_KT, Control.CommandType.CPU, context);
 	}
