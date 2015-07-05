@@ -310,7 +310,7 @@ public class CPU implements Constants {
         if (Utils.existFile(CPU_MSM_CPUFREQ_LIMIT))
             Control.runCommand(String.valueOf(freq), CPU_MSM_CPUFREQ_LIMIT, Control.CommandType.GENERIC, context);
         if (Utils.existFile(CPU_ENABLE_OC_KT))
-            Control.runCommand(1, CPU_ENABLE_OC_KT, Control.CommandType.CPU, context); {
+            Control.runCommand(String.valueOf(1), CPU_ENABLE_OC_KT, Control.CommandType.CPU, context); {
             if (getMinFreq(0) > freq) setMinFreq(freq, context);
             Control.runCommand(String.valueOf(freq), CPU_MAX_FREQ_KT, Control.CommandType.CPU, context);
 	}
