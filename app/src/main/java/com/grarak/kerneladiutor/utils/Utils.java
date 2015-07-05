@@ -70,7 +70,7 @@ import java.util.Locale;
  */
 public class Utils implements Constants {
 
-    public static boolean DARKTHEME = false;
+    public static boolean DARKTHEME = true;
 
     public static String decodeString(String text) {
         try {
