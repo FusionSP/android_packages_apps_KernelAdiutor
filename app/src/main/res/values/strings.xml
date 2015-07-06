@@ -13,7 +13,8 @@
     <string name="picture_too_big">Selected picture is too big</string>
     <string name="password">Password</string>
     <string name="password_wrong">Password is wrong</string>
-
+	<string name="zanezam_profile_description">This is the tunable profile for the ZaneZam governor</string>
+	<string name="zanezam_profile_title">ZaneZam Governor Profile</string>
     <!-- FileBrowser -->
     <string name="select_file">Select %s?</string>
     <string name="no_files">No files in this path.</string>
