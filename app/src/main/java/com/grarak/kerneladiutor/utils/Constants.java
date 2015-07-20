@@ -612,7 +612,9 @@ public interface Constants {
             "/sys/devices/virtual/timed_output/vibrator/voltage_level",
             "/sys/devices/virtual/timed_output/vibrator/pwm_value_1p"
     };
-
+	
+	public static String VIBE_KLTE = "/sys/devices/virtual/timed_output/vibrator/vibe_strength";
+	
     int[][] VIBRATION_MAX_MIN_ARRAY = {
             {127, 0},
             {100, 0},

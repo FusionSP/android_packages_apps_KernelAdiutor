@@ -289,11 +289,13 @@ public class Misc implements Constants {
                 VIBRATION_MAX = Utils.stringToInt(Utils.readFile("/sys/class/timed_output/vibrator/pwm_max"));
                 return VIBRATION_MAX;
             }
-
             for (int i = 0; i < VIBRATION_ARRAY.length; i++)
                 if (VIBRATION_PATH.equals(VIBRATION_ARRAY[i]))
                     VIBRATION_MAX = VIBRATION_MAX_MIN_ARRAY[i][0];
         }
+		if(Utils.existFile(Constants.VIBE_KLTE) && VIBRATION_MAX==null){
+			VIBRATION_MAX = Utils.stringToInt(Utils.readFile("/sys/devices/virtual/timed_output/vibrator/vibe_strength"));
+		}
         return VIBRATION_MAX != null ? VIBRATION_MAX : 0;
     }
 
